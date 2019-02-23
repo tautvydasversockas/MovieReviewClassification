@@ -1,2 +1,2 @@
 # MovieReviewClassification
-Imdb movie review classification with keras
+Imdb movie review classification with Keras
