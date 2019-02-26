@@ -26,7 +26,9 @@ print('____Building model____')
 
 model = models.Sequential()
 model.add(layers.Dense(16, activation='relu', input_shape=(10000,)))
+model.add(layers.Dropout(0.5))
 model.add(layers.Dense(16, activation='relu'))
+model.add(layers.Dropout(0.5))
 model.add(layers.Dense(1, activation='sigmoid'))
 
 model.compile(optimizer=optimizers.RMSprop(lr=0.001),
@@ -37,7 +39,7 @@ print('____Training model____')
 
 history = model.fit(x_train[10000:],
                     y_train[10000:],
-                    epochs=4,
+                    epochs=7,
                     batch_size=512,
                     validation_data=(x_train[:10000], y_train[:10000]))
 
